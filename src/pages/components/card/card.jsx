@@ -1,6 +1,6 @@
 
 
-import cardImgage from "../../assets/images/MensFashion.jpeg";
+//import cardImgage from "../../assets/images/MensFashion.jpeg";
 
 
 export default function Card ({name,categoryName,price,discountedPrice,discount,stockDetail,cardImage}){
