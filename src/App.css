@@ -1,51 +1,173 @@
-.App {
-  text-align: center;
+@import "./pages/productListing/product-Listing.css";
+
+:root{
+  --blue-color: #6976D9;
+  --white-color: white;
+  --black-color: black;
+  --light-grey: lightgrey;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.navbar {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: var(--blue-color);
+  padding: 0.6rem 0rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-field{
+  padding: 0.6rem 1.8rem;
+  border-radius: 0.8rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
+
+.input-container {
   display: flex;
-  flex-direction: column;
+  position: relative;
+  background-color: white;
+  border-radius: .5rem;
+}
+.btn{
+  padding: 0.1rem 1.2rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  background-color: var(--light-grey);
+  border: none;
+  margin: .5rem;
+  
+}
+
+.top-links {
+  display: flex;
+  justify-content:flex-end;
+  align-items:center;
+  margin-right: 2rem;
+}
+
+.child-ecom {
+  margin: 1rem;
+  position: relative;
+  font-size: large;
+}
+
+.logo{
+  margin-left: 2rem;
+  text-shadow: 1px 1px 4px  var(--black-color);
+  letter-spacing: 0.2rem;
+  color: var(--black-color);
+  font-weight: bold;
+  font-size: 25px;
+  
+}
+
+.input-container {
+  display: flex;
+  position: relative;
+}
+
+.input-field{
+  padding: 0.6rem 1.8rem;
+  border-radius: 0.8rem;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+.icon-button{
+  background-color: transparent;
+}
+
+.men-card-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.img-overlay-card {
+  margin-top: 8rem;
+  background-image: url('./pages/assets/images/MensFashion.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 80%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  height: 8.75rem;
+  flex: 1 1 17.875rem;
 }
 
-.App-link {
-  color: #61dafb;
+.img-overlay-card .overlay-text {
+  text-align: center;
+  width: 100%;
+  background-color: var(--white-color);
 }
 
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
+.banner img {
+  margin: 3rem 3rem 3rem 3rem;
+  
+  height: 691px;
+  width: 1250px;
 }
 
-.brand-title span {
-  color: #ffde59;
-}
+/* collection cards */
 
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
+.collection-card {
   display: flex;
+  gap: 2rem;
 }
 
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+.card-container {
+  background-color: var(--white-color);
+  padding: 2rem;
+  display: flex;
+  flex: 1 1 48.938rem;
+}
+
+.card-img-container img{
+  width: 12.75rem;
+  height: 14.813rem;
+  object-fit: cover;
+}
+
+.collection-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 2rem;
+}
+
+.collection-info section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.collection-info>section>h2 {
+  font-size: 1.75rem;
+  line-height: 2.625rem;
+}
+
+.collection-info>section>p {
+  font-size: 1.125rem;
+  line-height: 1.688rem;
+}
+
+#searchi{
+  padding: .6rem;
 }
