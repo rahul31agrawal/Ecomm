@@ -1,12 +1,12 @@
 import Card from "../components/card/card";
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
 import axios from 'axios';
+import {Navbar}  from "../../components/navbar/Navbar";
 
-export default function ProductListing({ products }) {
+export  function ProductListing({products }) {
 
-
-  const [item,setItem] = useState([]);
+ const [item,setItem] = useState([]);
 
   useEffect(()=>{
     
@@ -24,48 +24,8 @@ export default function ProductListing({ products }) {
  
   return (
     <div>
-      <nav className="navbar">
-        <h2 className="logo">
-          <a href="/index.html">Home</a>
-        </h2>
-
-        <div className="input-container">
-          <i id="searchi" className="fas fa-search icon"></i>
-          <input className="input-field" type="text" placeholder="Search" />
-        </div>
-
-        <div className="top-links">
-          <h2 className="btn">
-            <a href="/product.html">Product</a>
-          </h2>
-          <h2 className="btn">
-            <a href="/signInPage/signin.html">Login</a>
-          </h2>
-
-          <div className="child-ecom">
-            <button
-              onClick="location.href = '/cart/cart.html';"
-              type="button"
-              className="icon-button"
-            >
-              <i className="fas fa-shopping-cart fa-3x"></i>
-              <span className="icon-button__badge">2</span>
-            </button>
-          </div>
-
-          <div className="child-ecom">
-            <button
-              onClick="location.href = '/wishlist/wishlist.html';"
-              type="button"
-              className="icon-button"
-            >
-              <i className="fas fa-heart fa-3x"></i>
-              <span className="icon-button__badge">2</span>
-            </button>
-          </div>
-        </div>
-      </nav>
-
+      
+      <Navbar/>
       <div className="content product-grid">
         <div className="filters">
           <div className="filter-heading">
@@ -155,6 +115,8 @@ export default function ProductListing({ products }) {
           <div className="products-grid">
             
           {item.map((obj)=><Card {...obj}/>)}
+
+         
             
             
             
