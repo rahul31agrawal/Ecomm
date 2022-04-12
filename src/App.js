@@ -1,5 +1,8 @@
 import "./App.css";
-import { LandingPage } from "./pages";
+
+import {Home} from "./pages/homePage/Home"
+import { Routes, Route } from "react-router-dom";
+import {ProductListing} from "./pages/productListing/ProductListing"
 
 
 
@@ -8,8 +11,11 @@ import { LandingPage } from "./pages";
 function App() {
   return (
     <div className="App">
-    <LandingPage/>
     
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ProductListing" element={<ProductListing/>} />
+    </Routes>
 
     </div>
   );
