@@ -1,8 +1,3 @@
-
-
-
-
-
 export default function Card ({name,categoryName,price,discountedPrice,discount,stockDetail,cardImage}){
 return(
     <div className="container1">
