@@ -21,7 +21,9 @@ export const products = [
     discountedPrice:9000,
     discount:10,
     stockDetail: "In Stock",
-    cardImage:tshirtImage1
+    cardImage:tshirtImage1,
+    inStock: true,
+    rating: 4,
     
   },
   {
@@ -33,6 +35,8 @@ export const products = [
     discount:10,
     stockDetail: "Out of Stock",
     cardImage:tshirtImage2,
+    inStock: false,
+    rating: 3,
   },
   {
     _id: uuid(),
@@ -43,6 +47,8 @@ export const products = [
     discount:5,
     stockDetail: "In Stock",
     cardImage:tshirtImage3,
+    inStock: true,
+    rating: 2,
   },
   {
     _id: uuid(),
@@ -53,6 +59,8 @@ export const products = [
     discount:10,
     stockDetail: "out of Stock",
     cardImage:tshirtImage4,
+    inStock: false,
+    rating: 4,
 
   },
   {
@@ -64,6 +72,8 @@ export const products = [
     discount:15,
     stockDetail: "In Stock",
     cardImage:tshirtImage5,
+    inStock: true,
+    rating: 5,
   },
   {
     _id: uuid(),
@@ -74,5 +84,7 @@ export const products = [
     discount:50,
     stockDetail: "In Stock",
     cardImage:tshirtImage6,
+    inStock: true,
+    rating: 4,
   },
 ];
