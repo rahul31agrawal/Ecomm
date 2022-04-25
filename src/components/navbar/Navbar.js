@@ -36,7 +36,7 @@ const Navbar = () => {
 
           <div className="child-ecom">
             <button
-              onClick="location.href = '/wishlist/wishlist.html';"
+              onClick={() => { navigate("/wishList");}}
               type="button"
               className="icon-button"
             >
