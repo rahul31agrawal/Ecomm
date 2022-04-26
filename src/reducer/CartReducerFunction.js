@@ -23,7 +23,10 @@ const CartReducerFunction=(cartState,{type,payload})=>{
                              ...item,
                              quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity,
                             }: item),
-                        };                             
+                        };
+                        
+        
+                        
         default:
             return cartState;
         }

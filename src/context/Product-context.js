@@ -6,7 +6,8 @@ const ProductProvider=({children})=>{
     const [state,dispatch]=useReducer(ProductReducerFunction,
         {sortby:"null",
         rating:"null",
-        Showcategory:"All"
+        Showcategory:"All",
+        
         });
     return (
         <ProductContext.Provider value={{state,dispatch}}>
