@@ -1,27 +1,30 @@
-import Card from "../components/card/card";
+// import Card from "../components/card/card";
 import React from 'react';
 import { useState, useEffect} from 'react';
 import axios from 'axios';
 import {Navbar}  from "../../components/navbar/Navbar";
-import {Filter} from "../../components/filter/Filter"
+import {Filter} from "../../components/filter/Filter";
+import {ProductList} from "../components/ProductList/ProductList";
+import { useProduct } from "../../context/Product-context";
+import {getFinalFilteredProducts,getRatingSortedProducts,getSortedProducts} from "../../utilities/filterFuntion";
 
-export  function ProductListing({products }) {
+export  function ProductListing() {
 
- const [item,setItem] = useState([]);
+ const [products,setProducts] = useState([]);
 
-  useEffect(()=>{
-    
+ useEffect(() => {
+  const fetchProducts = async () => {
+    const res = await axios.get("/api/products");
+    setProducts(res.data.products);
+  };
+  fetchProducts();
+}, []);
 
-    axios.get('/api/products')
-    .then((response)=>{
-      setItem(response.data.products);
-
-    },
-    (error)=>{
-      console.log(error);
-
-    })
-  },[])
+const {state}=useProduct();
+          const {sortby,rating,Showcategory}=state;
+          const sortedProducts=getSortedProducts(products,sortby);
+          const ratingSortedProducts=getRatingSortedProducts(sortedProducts,rating);
+          const FinalFilteredProducts=getFinalFilteredProducts(ratingSortedProducts,Showcategory)
  
   return (
     <div>
@@ -37,7 +40,9 @@ export  function ProductListing({products }) {
           </h2>
           <div className="products-grid">
             
-          {item.map((obj)=><Card {...obj}/>)}
+          
+
+          <ProductList products={FinalFilteredProducts}/>
 
          
             
