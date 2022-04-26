@@ -20,7 +20,8 @@
 
 .filter-heading {
     display: flex;
-    align-items: center;
+    
+    /* align-items: center; */
     justify-content: space-between;
     border-bottom: 2px solid var(--primary);
 }
@@ -31,6 +32,8 @@
 
 .filter-head {
     margin: 1rem 0rem;
+    
+    font-weight: 800;
     
     
 }
@@ -91,4 +94,15 @@
 .container1{
     
     box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.card-badge1{
+    font-weight: bolder;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+    
+
 }
