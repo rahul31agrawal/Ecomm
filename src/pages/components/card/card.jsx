@@ -7,7 +7,7 @@ import { useWishlist } from "../../../context/wishlist-context";
 
 export const  Card=({product})=> {
 
-  const {_id,name,categoryName,price,discountedPrice,discount,stockDetail,cardImage,rating} = product;
+  const {_id,name,categoryName,price,discountedPrice,discount,cardImage,rating} = product;
   const {cartState,cartDispatch}=useCart();
   const {wishlistState,wishlistDispatch}=useWishlist();
   
