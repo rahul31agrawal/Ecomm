@@ -36,7 +36,7 @@ const {state}=useProduct();
 
         <main className="products-container">
           <h2 className="page-title">
-            Showing All Products <small>6</small>
+            Showing All Products <small>{FinalFilteredProducts.length}</small>
           </h2>
           <div className="products-grid">
             

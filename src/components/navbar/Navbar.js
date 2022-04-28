@@ -1,7 +1,11 @@
 
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../context/cart-context";
+import { useWishlist } from "../../context/wishlist-context";
 
 const Navbar = () => {
+  const {cartState}=useCart();
+    const {wishlistState}=useWishlist();
   const navigate = useNavigate();
 
     return (
@@ -30,18 +34,18 @@ const Navbar = () => {
               className="icon-button"
             >
               <i className="fas fa-shopping-cart fa-3x"></i>
-              <span className="icon-button__badge">2</span>
+              <span className="icon-button__badge">{cartState.cart.length >0 ? cartState.cart.length : '0' }</span>
             </button>
           </div>
 
           <div className="child-ecom">
             <button
-              onClick={() => { navigate("/wishList");}}
+              onClick={() => { navigate("/WishlistPage");}}
               type="button"
               className="icon-button"
             >
               <i className="fas fa-heart fa-3x"></i>
-              <span className="icon-button__badge">2</span>
+              <span className="icon-button__badge">{wishlistState.wishlist.length >0 ? wishlistState.wishlist.length : '0'}</span>
             </button>
           </div>
         </div>
