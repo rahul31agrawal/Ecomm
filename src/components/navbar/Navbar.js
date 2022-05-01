@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 
+
 const Navbar = () => {
   const {cartState}=useCart();
     const {wishlistState}=useWishlist();
@@ -29,7 +30,7 @@ const Navbar = () => {
 
           <div className="child-ecom">
             <button
-              onClick="location.href = '/cart/cart.html';"
+              onClick={() => { navigate("/CartPage");}}
               type="button"
               className="icon-button"
             >
