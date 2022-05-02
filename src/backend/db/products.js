@@ -27,6 +27,7 @@ export const products = [
     cardImage:tshirtImage1,
     inStock: true,
     rating: 4,
+    quantity:"1",
     
   },
   {
@@ -40,6 +41,7 @@ export const products = [
     cardImage:tshirtImage2,
     inStock: false,
     rating: 3,
+    quantity:"1",
   },
   {
     _id: uuid(),
@@ -52,6 +54,7 @@ export const products = [
     cardImage:tshirtImage3,
     inStock: true,
     rating: 2,
+    quantity:"1",
   },
   {
     _id: uuid(),
@@ -64,6 +67,7 @@ export const products = [
     cardImage:greenwomen,
     inStock: false,
     rating: 4,
+    quantity:"1",
 
   },
   {
@@ -77,6 +81,7 @@ export const products = [
     cardImage:jockey_women,
     inStock: true,
     rating: 5,
+    quantity:"1",
   },
   {
     _id: uuid(),
@@ -89,5 +94,6 @@ export const products = [
     cardImage:white_media_women,
     inStock: true,
     rating: 4,
+    quantity:"1",
   },
 ];

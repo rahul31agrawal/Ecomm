@@ -1,5 +1,6 @@
 @import "./pages/productListing/product-Listing.css";
 @import"./pages/wishListPage/wishlist-page.css";
+@import"./pages/cartPage/cart-page.css";
 
 
 :root{
