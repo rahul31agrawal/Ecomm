@@ -32,7 +32,7 @@ return(
               <div className="card-footer1">
               <div className="card-buttons">{
                     cartState.cart.find((item) => item._id === _id) ? (
-                    <Link to="/cart">
+                    <Link to="/CartPage">
                         <button className="btn-link1 call-to-action1 vertical-btn1">
                             Go to cart
                         </button>
