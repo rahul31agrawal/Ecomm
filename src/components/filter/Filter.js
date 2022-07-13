@@ -21,6 +21,11 @@ export const Filter = () => {
       </div>
             <div className="filter-category --category">
               <h3 className="filter-head">Category</h3>
+              <input  id="bystock" type="checkbox"
+               onChange={()=>dispatch({type:"category", payload:"All"})}
+               checked={Showcategory==="All"}      />
+              <label htmlFor="bystock">All</label>
+              <br/>
               <input type="checkbox" id="men" name="men" value="mens" 
                onChange={()=>dispatch({type:"category", payload:"mens"})}
                checked={Showcategory==="mens"} />
@@ -31,10 +36,17 @@ export const Filter = () => {
                checked={Showcategory==="womens"}        />
               <label htmlFor="women">Women Clothing</label>
               <br />
-              <input  id="bystock" type="checkbox"
-               onChange={()=>dispatch({type:"category", payload:"All"})}
-               checked={Showcategory==="All"}      />
-              <label htmlFor="bystock">All</label>
+              <input type="checkbox" id="babyboy" name="babyboy" value="babyboy" 
+               onChange={()=>dispatch({type:"category", payload:"Baby Boy"})}
+               checked={Showcategory==="Baby Boy"}        />
+              <label htmlFor="babyboy">Baby Boy</label>
+              <br />
+              <input type="checkbox" id="babygirl" name="babygirl" value="babygirl" 
+               onChange={()=>dispatch({type:"category", payload:"Baby Girl"})}
+               checked={Showcategory==="Baby Girl"}        />
+              <label htmlFor="babygirl">Baby Girl</label>
+              <br />
+              
             </div>
             <div className="filter-category --Rating">
               <h3 className="filter-head">Rating</h3>

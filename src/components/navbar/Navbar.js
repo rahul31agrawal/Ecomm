@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
@@ -12,7 +12,10 @@ const Navbar = () => {
     return (
     <nav className="navbar">
         <h2 className="logo">
-          <a href="/index.html">Home</a>
+          
+          <NavLink to="/" end>
+            Home
+           </NavLink>
         </h2>
 
         <div className="input-container">

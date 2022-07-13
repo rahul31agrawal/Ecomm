@@ -29,6 +29,12 @@ const getFinalFilteredProducts=(products,Showcategory)=>{
   if(Showcategory==="womens"){
     return products.filter((item)=> item.categoryName==="womens")
   }
+  if(Showcategory==="Baby Boy"){
+    return products.filter((item)=> item.categoryName==="Baby Boy")
+  }
+  if(Showcategory==="Baby Girl"){
+    return products.filter((item)=> item.categoryName==="Baby Girl")
+  }
   
 return products;
 }
