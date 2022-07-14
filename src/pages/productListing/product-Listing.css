@@ -4,7 +4,7 @@
 }
 
 .content{
-    margin-top: 8rem;
+    margin-top: 5rem;
     text-align: center;
 }
 
@@ -89,6 +89,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 1rem;
+    margin-top: -1rem;
 }
 
 .container1{
@@ -106,3 +107,8 @@
     
 
 }
+
+.products-container{
+    margin-top: -5rem;
+}
+
