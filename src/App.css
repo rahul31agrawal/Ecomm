@@ -1,7 +1,8 @@
 @import "./pages/productListing/product-Listing.css";
 @import"./pages/wishListPage/wishlist-page.css";
 @import"./pages/cartPage/cart-page.css";
-
+@import "./pages/loginPage/login.css";
+@import "./components/navbar/navbar.css";
 
 :root{
   --blue-color: #6976D9;
@@ -173,4 +174,9 @@ a{
 
 #searchi{
   padding: .6rem;
+}
+
+.rating{
+  padding-top: .5rem;
+ 
 }
