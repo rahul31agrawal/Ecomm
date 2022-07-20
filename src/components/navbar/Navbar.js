@@ -2,12 +2,29 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
+import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/authcontext";
 
 
 const Navbar = () => {
   const {cartState}=useCart();
     const {wishlistState}=useWishlist();
   const navigate = useNavigate();
+
+
+  const { auth, setAuth } = useAuthContext();
+
+    const logoutFunc = () => {
+        localStorage.removeItem("TOKEN");
+        localStorage.removeItem("USER_INFO");
+
+        setAuth({
+          loginStatus: false,
+          token: localStorage.getItem("TOKEN"),
+          user: JSON.parse(localStorage.getItem("USER_INFO")),
+        });
+        navigate("/login");
+      };
 
     return (
     <nav className="navbar">
@@ -24,12 +41,19 @@ const Navbar = () => {
         </div>
 
         <div className="top-links">
-          <h2 className="btn">
-            <button onClick={() => { navigate("/ProductListing");}}>Product</button>
-          </h2>
-          <h2 className="btn">
-            <button href="/signInPage/signin.html">Login</button>
-          </h2>
+        <Link className="btn" to="/ProductListing">
+        Products
+        </Link>
+
+          {auth.loginStatus ? (
+        <div className="btn" to="" onClick={() => logoutFunc()}>
+          Logout
+        </div>
+        ) : (
+        <Link className="btn" to="/login">
+          Login
+        </Link>
+        )}
 
           <div className="child-ecom">
             <button
