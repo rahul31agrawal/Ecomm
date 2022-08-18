@@ -1,5 +1,6 @@
 // import React from "react";
 import { useProduct } from "../../context/Product-context";
+import "./filter.css";
 
 export const Filter = () => {
   const { state, dispatch } = useProduct();
@@ -20,6 +21,8 @@ export const Filter = () => {
         <div className="sidebar_box sidebar_slider"></div>
         <div className="filter-category --category">
           <h3 className="filter-head">Category</h3>
+          
+          <div>
           <input
             id="bystock"
             type="checkbox"
@@ -27,7 +30,11 @@ export const Filter = () => {
             checked={Showcategory === "All"}
           />
           <label htmlFor="bystock">All</label>
+          </div>
+          
           <br />
+
+          <div>
           <input
             type="checkbox"
             id="men"
@@ -37,7 +44,12 @@ export const Filter = () => {
             checked={Showcategory === "mens"}
           />
           <label htmlFor="men">Men Clothing</label>
+          </div>
+          
           <br />
+
+          <div>
+
           <input
             type="checkbox"
             id="women"
@@ -47,7 +59,12 @@ export const Filter = () => {
             checked={Showcategory === "womens"}
           />
           <label htmlFor="women">Women Clothing</label>
+
+          </div>
+          
           <br />
+
+          <div>
           <input
             type="checkbox"
             id="babyboy"
@@ -57,7 +74,11 @@ export const Filter = () => {
             checked={Showcategory === "Baby Boy"}
           />
           <label htmlFor="babyboy">Baby Boy</label>
+          </div>
+          
           <br />
+
+          <div>
           <input
             type="checkbox"
             id="babygirl"
@@ -69,12 +90,14 @@ export const Filter = () => {
             checked={Showcategory === "Baby Girl"}
           />
           <label htmlFor="babygirl">Baby Girl</label>
+          </div>
+          
           <br />
         </div>
         <div className="filter-category --Rating">
           <h3 className="filter-head">Rating</h3>
           <div className="filter-h">
-            {/* <ul className="list"> */}
+            
               <div >
                 <label className="rating">
                   <input
@@ -118,11 +141,13 @@ export const Filter = () => {
                   2🌟 and above
                 </label>
               </div>
-            {/* </ul> */}
+            
           </div>
         </div>
         <div className="filter-category --Sortby">
           <h3 className="filter-head">Sort By</h3>
+
+          <div>
           <input
             id="lowtohigh"
             type="radio"
@@ -134,7 +159,10 @@ export const Filter = () => {
             checked={sortby === "PriceLowToHigh"}
           />
           <label htmlFor="lowtohigh">Low To High</label>
+          </div>
+          
           <br />
+          <div>
           <input
             id="hightolow"
             type="radio"
@@ -146,6 +174,8 @@ export const Filter = () => {
             checked={sortby === "PriceHighToLow"}
           />
           <label htmlFor="hightolow">High To Low</label>
+          </div>
+          
         </div>
       </form>
     </div>
