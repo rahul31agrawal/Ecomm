@@ -1,6 +1,6 @@
 import MenCategory from "../../pages/assets/categoryImages/Men.jpg";
 import womenCategory from "../../pages/assets/categoryImages/Women.jpg";
-import babyboyCategory from "../../pages/assets/categoryImages/Baby boy.jpg";
+import babyboyCategory from "../../pages/assets/categoryImages/Baby boy1.jpg";
 import babygirlCategory from "../../pages/assets/categoryImages/Baby Girl.jpg";
 import freshArrivalCategory from "../../pages/assets/categoryImages/freshArrivals.jpg";
 
