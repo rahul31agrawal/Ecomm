@@ -2,7 +2,7 @@
 
 This folder contains the Mock Backend created for E-Commerce App.
 Tech stack used:
-React
+Tech Stack- ReactJS, Vanilla JavaScript, CSS
 React Hooks
 React context API + useReducer hook
 React Router v6
