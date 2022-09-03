@@ -1,4 +1,4 @@
-## E-Commerce Backend
+## Amazzon An ecommerce app
 
 This folder contains the Mock Backend created for E-Commerce App.
 Tech stack used:
