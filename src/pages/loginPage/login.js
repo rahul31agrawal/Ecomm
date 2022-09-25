@@ -3,10 +3,8 @@ import { useAuthContext } from "../../context/authcontext";
 import { useState } from "react";
 import axios from "axios";
 
-const LoginPage = () =>{
-    
-
-    const { setAuth } = useAuthContext();
+const LoginPage = () => {
+  const { setAuth } = useAuthContext();
 
   const [loginInfo, setLoginInfo] = useState({
     email: "",
@@ -69,80 +67,102 @@ const LoginPage = () =>{
     loginFunc();
   };
 
-    return( <>
-    
-        <main className="main-container">
-            <div className="login-container">
-                <form onSubmit={singupSubmiter}> 
-                    
-                    <div className="form-content">
-                      <h1 className="login-heading">Login</h1>
-                      <div>
-                        <label className = "label-position" htmlFor="email-id">Email</label>
-                         <input className="user-input" type="email" name="" id="email-id" placeholder="enter your email"
-                         value={loginInfo.email}
-                         onChange={(e) => {
-                           setLoginInfo((item) => ({
-                             ...item,
-                             email: e.target.value,
-                           }));
-           
-                           e.target.value.length > 0
-                             ? setLoginInfo((item) => ({ ...item, loginBtn: true }))
-                             : setLoginInfo((item) => ({ ...item, loginBtn: false }));
-                         }}
-                         required/>
-                      </div>
-                     
-                     <div>
-                     <label  className = "label-position" htmlFor="user-password">Password</label>
-                     <input className="user-input" type={showPassword ? "text" : "password"}
-                      name="" id="user-password" placeholder="enter your password"
-                      value={loginInfo.password}
-                      onChange={(e) => {
-                        setLoginInfo((item) => ({
-                         ...item,
-                         password: e.target.value,
-                        }));
-                       }}
-                       required/>
+  return (
+    <>
+      <main className="main-container">
+        <div className="login-container">
+          <form onSubmit={singupSubmiter}>
+            <div className="form-content">
+              <h1 className="login-heading">Login</h1>
+              <div>
+                <label className="label-position" htmlFor="email-id">
+                  Email
+                </label>
+                <input
+                  className="user-input"
+                  type="email"
+                  name=""
+                  id="email-id"
+                  placeholder="enter your email"
+                  value={loginInfo.email}
+                  onChange={(e) => {
+                    setLoginInfo((item) => ({
+                      ...item,
+                      email: e.target.value,
+                    }));
 
-                    <span className="password-eye">
-                      {showPassword ? (
+                    e.target.value.length > 0
+                      ? setLoginInfo((item) => ({ ...item, loginBtn: true }))
+                      : setLoginInfo((item) => ({ ...item, loginBtn: false }));
+                  }}
+                  required
+                />
+              </div>
+
+              <div className="passwordContainer">
+                <label className="label-position" htmlFor="user-password">
+                  Password
+                </label>
+                <input
+                  className="user-input"
+                  type={showPassword ? "text" : "password"}
+                  name=""
+                  id="user-password"
+                  placeholder="enter your password"
+                  value={loginInfo.password}
+                  onChange={(e) => {
+                    setLoginInfo((item) => ({
+                      ...item,
+                      password: e.target.value,
+                    }));
+                  }}
+                  required
+                />
+                <div className="passwordE">
+                  <span className="password-eye">
+                    {showPassword ? (
                       <i
-                       className="fas fa-eye"
+                        className="fas fa-eye"
                         onClick={() => setShowPassword(false)}
-                       ></i>
-                     ) : (
-                     <i
-                      className="fas fa-eye-slash"
-                      onClick={() => setShowPassword(true)}
-                     ></i>
-                     )}
-                    </span>
-                     </div>
-                     
-                     
-                     
+                      ></i>
+                    ) : (
+                      <i
+                        className="fas fa-eye-slash"
+                        onClick={() => setShowPassword(true)}
+                      ></i>
+                    )}
+                  </span>
+                </div>
+              </div>
 
-                     <div>
-                     <button  id = "login-btn" type="submit">Login</button>
-                     </div>
+              <div>
+                <button id="login-btn" type="submit">
+                  Login
+                </button>
+              </div>
 
-                     <div>
-                     <button  id = "login-btn" onClick={loginAsGuest}>Guest Login</button>
-                     </div>
+              <div>
+                <button id="login-btn" onClick={loginAsGuest}>
+                  Guest Login
+                </button>
+              </div>
 
-                     <div>
-                     <button  id = "create-btn" onClick={() => { navigate("/signup")}}>Create new Account </button>
-                     </div>
-                     
-                    </div>
-                  </form>
+              <div>
+                <button
+                  id="create-btn"
+                  onClick={() => {
+                    navigate("/signup");
+                  }}
+                >
+                  Create new Account{" "}
+                </button>
+              </div>
             </div>
-        </main>
+          </form>
+        </div>
+      </main>
     </>
-    )
-}
+  );
+};
 
-export {LoginPage}
+export { LoginPage };

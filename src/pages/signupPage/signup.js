@@ -108,7 +108,7 @@ const SignupPage = () => {
                 />
               </div>
 
-              <div>
+              <div className="signupPassword">
                 <label className="label-position" htmlFor="user-password">
                   Password
                 </label>
@@ -128,78 +128,77 @@ const SignupPage = () => {
                   required
                 />
 
-                <span className="password-eye">
-                  {showPassword.passwordOne ? (
-                    <i
-                      className="fas fa-eye"
-                      onClick={(item) =>
-                        setShowPassword({ ...item, passwordOne: false })
-                      }
-                    ></i>
-                  ) : (
-                    <i
-                      className="fas fa-eye-slash"
-                      onClick={(item) =>
-                        setShowPassword({ ...item, passwordOne: true })
-                      }
-                    ></i>
-                  )}
-                </span>
+                <div className="signupPasswordEye">
+                  <span className="password-eye">
+                    {showPassword.passwordOne ? (
+                      <i
+                        className="fas fa-eye"
+                        onClick={(item) =>
+                          setShowPassword({ ...item, passwordOne: false })
+                        }
+                      ></i>
+                    ) : (
+                      <i
+                        className="fas fa-eye-slash"
+                        onClick={(item) =>
+                          setShowPassword({ ...item, passwordOne: true })
+                        }
+                      ></i>
+                    )}
+                  </span>
+                </div>
               </div>
 
-              <div className="confpass" >
+              <div className="confpass">
+                <div>
+                  <label className="label-position" htmlFor="user-password">
+                    Confirm Password
+                  </label>
+                </div>
 
                 <div>
-                <label className="label-position"  htmlFor="user-password">
-                  Confirm Password
-                </label>
+                  <input
+                    className="user-input"
+                    type={showPassword.passwordTwo ? "text" : "password"}
+                    name=""
+                    id="user-password"
+                    placeholder="Confirm password"
+                    onChange={(e) => {
+                      setSignupInput((item) => ({
+                        ...item,
+                        confirmPassword: e.target.value,
+                      }));
+                    }}
+                    minLength="6"
+                    required
+                  />
+
+                  <div className="confPasswordEye">
+                    <span className="password-eye">
+                      {showPassword.passwordTwo ? (
+                        <i
+                          className="fas fa-eye"
+                          onClick={() =>
+                            setShowPassword((item) => ({
+                              ...item,
+                              passwordTwo: false,
+                            }))
+                          }
+                        ></i>
+                      ) : (
+                        <i
+                          className="fas fa-eye-slash"
+                          onClick={() =>
+                            setShowPassword((item) => ({
+                              ...item,
+                              passwordTwo: true,
+                            }))
+                          }
+                        ></i>
+                      )}
+                    </span>
+                  </div>
                 </div>
-                
-
-                <div>
-
-                <input
-                  className="user-input"
-                  type={showPassword.passwordTwo ? "text" : "password"}
-                  name=""
-                  id="user-password"
-                  placeholder="Confirm password"
-                  onChange={(e) => {
-                    setSignupInput((item) => ({
-                      ...item,
-                      confirmPassword: e.target.value,
-                    }));
-                  }}
-                  minLength="6"
-                  required
-                />
-
-                <span className="password-eye">
-                  {showPassword.passwordTwo ? (
-                    <i
-                      className="fas fa-eye"
-                      onClick={() =>
-                        setShowPassword((item) => ({
-                          ...item,
-                          passwordTwo: false,
-                        }))
-                      }
-                    ></i>
-                  ) : (
-                    <i
-                      className="fas fa-eye-slash"
-                      onClick={() =>
-                        setShowPassword((item) => ({
-                          ...item,
-                          passwordTwo: true,
-                        }))
-                      }
-                    ></i>
-                  )}
-                </span>
-
-                </div>
-                
               </div>
 
               <div>

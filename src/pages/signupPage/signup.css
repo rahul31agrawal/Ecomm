@@ -1,0 +1,22 @@
+.signupPassword{
+    position: relative;
+}
+
+.signupPasswordEye{
+    position: absolute;
+    left: 15.5rem;
+    top: .7rem;
+}
+
+
+.confpass{
+    position: relative;
+}
+
+
+.confPasswordEye{
+    position: absolute;
+    left: 16.5rem;
+    top:.7rem;
+}
+
