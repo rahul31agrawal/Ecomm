@@ -52,3 +52,13 @@
 .confpass{
     display: flex;
 }
+
+.passwordContainer{
+    position: relative;
+}
+
+.passwordE{
+    position: absolute;
+    left: 15.5rem;
+    top: .6rem;
+}

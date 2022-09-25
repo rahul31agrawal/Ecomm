@@ -3,6 +3,7 @@
 @import"./pages/cartPage/cart-page.css";
 @import "./pages/loginPage/login.css";
 @import "./components/navbar/navbar.css";
+@import "./pages/signupPage/signup.css";
 
 :root{
   --blue-color: #6976D9;
