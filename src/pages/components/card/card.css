@@ -1,12 +1,13 @@
-.heart-badge1{
-    cursor: pointer;
+.heart-badge1 {
+  cursor: pointer;
 }
 
-.btn-link1{
-    margin-bottom: .5rem;
+.btn-link1 {
+  margin-bottom: .5rem;
+  cursor: pointer;
 }
 
-.container1:hover{
+.container1:hover {
   transition: 0.3s;
   transform: scale(1.03);
 }
