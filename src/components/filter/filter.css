@@ -1,3 +1,7 @@
 .filter-h > *{
     margin: 10px 0;
 }
+
+.clear{
+    cursor: pointer;
+}
