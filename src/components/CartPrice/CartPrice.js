@@ -1,10 +1,11 @@
 import { useCart } from "../../context/cart-context";
 import { toast } from "react-toastify";
 import { loadScript } from "../../utilities/loadScript";
-import { useNavigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export const CartPrice=()=>{
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const{cartState}=useCart();
 
     const itemPrice = cartState.cart.reduce(
@@ -38,10 +39,12 @@ export const CartPrice=()=>{
               razorpayId: razorpay_payment_id,
             };
             
+            
             toast.success("Order Placed, Continue Shopping");
             // navigate("/ProductListing");
             
             // setCartItems([]);
+            console.log(orderData.orderAmount);
           },
           prefill: {
             name: "Amazzon",
