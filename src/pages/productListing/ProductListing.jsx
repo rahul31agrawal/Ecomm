@@ -7,6 +7,8 @@ import {Filter} from "../../components/filter/Filter";
 import {ProductList} from "../components/ProductList/ProductList";
 import { useProduct } from "../../context/Product-context";
 import {getFinalFilteredProducts,getRatingSortedProducts,getSortedProducts} from "../../utilities/filterFuntion";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export  function ProductListing() {
 
@@ -44,7 +46,7 @@ const {state}=useProduct();
 
           <ProductList products={FinalFilteredProducts}/>
 
-         
+          <ToastContainer />
             
             
             

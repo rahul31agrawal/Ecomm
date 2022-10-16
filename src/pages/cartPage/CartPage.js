@@ -3,7 +3,8 @@ import { useCart } from "../../context/cart-context";
 import {CartList} from "../../components/CartList/CartList";
 import {CartPrice} from "../../components/CartPrice/CartPrice";
 import {Navbar} from "../../components/navbar/Navbar";
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function CartPage(){
 
@@ -29,6 +30,7 @@ export default function CartPage(){
             </div>
             <aside class="cart-summary">
             <CartPrice/>
+            <ToastContainer />
             </aside>
             </div>
             
