@@ -2,6 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useAuthContext } from "../../context/authcontext";
+import { TextField } from "@material-ui/core";
+import FormControl from "@material-ui/core/FormControl";
+import OutlinedInput from "@material-ui/core/OutlinedInput";
+import InputLabel from "@material-ui/core/InputLabel";
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Input from "@material-ui/core/Input";
 
 const SignupPage = () => {
   const { setAuth } = useAuthContext();
@@ -68,16 +77,10 @@ const SignupPage = () => {
               <h1 className="login-heading">Create Account</h1>
 
               <div>
-                <label className="label-position" htmlFor="email-id">
-                  {" "}
-                  Name
-                </label>
-                <input
-                  className="user-input"
-                  type="text"
-                  name=""
-                  id="email-id"
-                  placeholder="Name Surname"
+                <TextField
+                  label="Username"
+                  placeholder="Enter username"
+                  variant="outlined"
                   onChange={(e) => {
                     setSignupInput((item) => ({
                       ...item,
@@ -89,15 +92,10 @@ const SignupPage = () => {
               </div>
 
               <div>
-                <label className="label-position" htmlFor="email-id">
-                  Email address
-                </label>
-                <input
-                  className="user-input"
-                  type="email"
-                  name=""
-                  id="email-id"
-                  placeholder="enter your email"
+                <TextField
+                  label="Email"
+                  placeholder="Enter email id"
+                  variant="outlined"
                   onChange={(e) => {
                     setSignupInput((item) => ({
                       ...item,
@@ -109,96 +107,80 @@ const SignupPage = () => {
               </div>
 
               <div className="signupPassword">
-                <label className="label-position" htmlFor="user-password">
-                  Password
-                </label>
-                <input
-                  className="user-input"
-                  type={showPassword.passwordOne ? "text" : "password"}
-                  name=""
-                  id="user-password"
-                  placeholder="enter password"
-                  onChange={(e) => {
-                    setSignupInput((item) => ({
-                      ...item,
-                      password: e.target.value,
-                    }));
-                  }}
-                  minLength="6"
-                  required
-                />
-
-                <div className="signupPasswordEye">
-                  <span className="password-eye">
-                    {showPassword.passwordOne ? (
-                      <i
-                        className="fas fa-eye"
-                        onClick={(item) =>
-                          setShowPassword({ ...item, passwordOne: false })
-                        }
-                      ></i>
-                    ) : (
-                      <i
-                        className="fas fa-eye-slash"
-                        onClick={(item) =>
-                          setShowPassword({ ...item, passwordOne: true })
-                        }
-                      ></i>
-                    )}
-                  </span>
-                </div>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="outlined-adornment-password">
+                    Password
+                  </InputLabel>
+                  <OutlinedInput
+                    id="outlined-adornment-password"
+                    type={showPassword.passwordOne ? "text" : "password"}
+                    onChange={(e) => {
+                      setSignupInput((item) => ({
+                        ...item,
+                        password: e.target.value,
+                      }));
+                    }}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={(item) =>
+                            setShowPassword({
+                              ...item,
+                              passwordOne: !showPassword.passwordOne,
+                            })
+                          }
+                          edge="end"
+                        >
+                          {showPassword.passwordOne ? (
+                            <Visibility />
+                          ) : (
+                            <VisibilityOff />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    labelWidth={70}
+                  />
+                </FormControl>
               </div>
 
               <div className="confpass">
-                <div>
-                  <label className="label-position" htmlFor="user-password">
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="standard-adornment-password">
+                    {" "}
                     Confirm Password
-                  </label>
-                </div>
-
-                <div>
-                  <input
-                    className="user-input"
+                  </InputLabel>
+                  <Input
+                    id="standard-adornment-password"
                     type={showPassword.passwordTwo ? "text" : "password"}
-                    name=""
-                    id="user-password"
-                    placeholder="Confirm password"
                     onChange={(e) => {
                       setSignupInput((item) => ({
                         ...item,
                         confirmPassword: e.target.value,
                       }));
                     }}
-                    minLength="6"
-                    required
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={(item) =>
+                            setShowPassword({
+                              ...item,
+                              passwordTwo: !showPassword.passwordTwo,
+                            })
+                          }
+                        >
+                          {showPassword.passwordTwo ? (
+                            <Visibility />
+                          ) : (
+                            <VisibilityOff />
+                          )}
+                        </IconButton>
+                      </InputAdornment>
+                    }
                   />
-
-                  <div className="confPasswordEye">
-                    <span className="password-eye">
-                      {showPassword.passwordTwo ? (
-                        <i
-                          className="fas fa-eye"
-                          onClick={() =>
-                            setShowPassword((item) => ({
-                              ...item,
-                              passwordTwo: false,
-                            }))
-                          }
-                        ></i>
-                      ) : (
-                        <i
-                          className="fas fa-eye-slash"
-                          onClick={() =>
-                            setShowPassword((item) => ({
-                              ...item,
-                              passwordTwo: true,
-                            }))
-                          }
-                        ></i>
-                      )}
-                    </span>
-                  </div>
-                </div>
+                </FormControl>
               </div>
 
               <div>
