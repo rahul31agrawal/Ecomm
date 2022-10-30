@@ -53,9 +53,9 @@
     display: flex;
 }
 
-.passwordContainer{
+/* .passwordContainer{
     position: relative;
-}
+} */
 
 .passwordE{
     position: absolute;

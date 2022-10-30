@@ -2,6 +2,22 @@ import { useNavigate } from "react-router";
 import { useAuthContext } from "../../context/authcontext";
 import { useState } from "react";
 import axios from "axios";
+import {
+  TextField,
+  Button,
+  Typography,
+  Link,
+} from "@material-ui/core";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import IconButton from "@material-ui/core/IconButton";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+
 
 const LoginPage = () => {
   const { setAuth } = useAuthContext();
@@ -14,6 +30,9 @@ const LoginPage = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+
+  const btnstyle={margin:'8px 0'}
+  const inputStyle={width:'12rem'}
 
   const navigate = useNavigate();
 
@@ -75,15 +94,10 @@ const LoginPage = () => {
             <div className="form-content">
               <h1 className="login-heading">Login</h1>
               <div>
-                <label className="label-position" htmlFor="email-id">
-                  Email
-                </label>
-                <input
-                  className="user-input"
-                  type="email"
-                  name=""
-                  id="email-id"
-                  placeholder="enter your email"
+                <TextField
+                  label="Username"
+                  placeholder="Enter username"
+                  
                   value={loginInfo.email}
                   onChange={(e) => {
                     setLoginInfo((item) => ({
@@ -100,62 +114,76 @@ const LoginPage = () => {
               </div>
 
               <div className="passwordContainer">
-                <label className="label-position" htmlFor="user-password">
-                  Password
-                </label>
-                <input
-                  className="user-input"
-                  type={showPassword ? "text" : "password"}
-                  name=""
-                  id="user-password"
-                  placeholder="enter your password"
-                  value={loginInfo.password}
-                  onChange={(e) => {
-                    setLoginInfo((item) => ({
-                      ...item,
-                      password: e.target.value,
-                    }));
-                  }}
-                  required
-                />
-                <div className="passwordE">
-                  <span className="password-eye">
-                    {showPassword ? (
-                      <i
-                        className="fas fa-eye"
-                        onClick={() => setShowPassword(false)}
-                      ></i>
-                    ) : (
-                      <i
-                        className="fas fa-eye-slash"
-                        onClick={() => setShowPassword(true)}
-                      ></i>
-                    )}
-                  </span>
-                </div>
+                
+                <FormControl>
+                    <InputLabel htmlFor="standard-adornment-password">
+                      Password
+                    </InputLabel>
+                    <Input
+                      id="standard-adornment-password"
+                      style={inputStyle}
+                      type={showPassword ? "text" : "password"}
+                      value={loginInfo.password}
+                      onChange={(e) => {
+                        setLoginInfo((item) => ({
+                          ...item,
+                          password: e.target.value,
+                        }));
+                      }}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={() => setShowPassword(!showPassword)}
+                          >
+                            {showPassword ? (
+                              <VisibilityIcon />
+                            ) : (
+                              <VisibilityOffIcon />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
+                
+              </div>
+
+              <FormControlLabel
+                    control={
+                    <Checkbox
+                        name="checkedB"
+                        color="primary"
+                    />
+                    }
+                    label="Remember me"
+                 />
+
+              <div>
+               
+
+              <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Login</Button>
+
               </div>
 
               <div>
-                <button id="login-btn" type="submit">
-                  Login
-                </button>
+                
+
+                <Button type='submit'  color='primary' variant="contained" style={btnstyle}
+                onClick={loginAsGuest}
+                fullWidth>Guest Login</Button>
+
               </div>
 
               <div>
-                <button id="login-btn" onClick={loginAsGuest}>
-                  Guest Login
-                </button>
-              </div>
+                
 
-              <div>
-                <button
-                  id="create-btn"
-                  onClick={() => {
-                    navigate("/signup");
-                  }}
-                >
-                  Create new Account{" "}
-                </button>
+                <Typography > Don't you have an account ?
+                     <Link href="/signup" >
+                        Sign Up 
+                </Link>
+                </Typography>
+
               </div>
             </div>
           </form>
