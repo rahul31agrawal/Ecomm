@@ -20,3 +20,15 @@
     top:.7rem;
 }
 
+.signUp-container  {
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+    width: 30rem;
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    background-color: #F7F7F7;
+    box-shadow: 1px 1px 5px 4px #D1D5DB;
+    
+}
+

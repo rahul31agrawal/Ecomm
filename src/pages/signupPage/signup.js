@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useAuthContext } from "../../context/authcontext";
-import { TextField } from "@material-ui/core";
+import { TextField,Button } from "@material-ui/core";
 import FormControl from "@material-ui/core/FormControl";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -10,7 +10,7 @@ import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
-import Input from "@material-ui/core/Input";
+
 
 const SignupPage = () => {
   const { setAuth } = useAuthContext();
@@ -27,6 +27,9 @@ const SignupPage = () => {
   });
 
   const navigate = useNavigate();
+
+  const inputStyle={width:'16rem'}
+  const btnstyle={margin:'8px 0'}
 
   const signupSubmiter = (e) => {
     e.preventDefault();
@@ -71,13 +74,13 @@ const SignupPage = () => {
   return (
     <>
       <main className="main-container">
-        <div className="login-container">
+        <div className="signUp-container">
           <form onSubmit={signupSubmiter}>
             <div className="form-content">
               <h1 className="login-heading">Create Account</h1>
 
               <div>
-                <TextField
+                <TextField style={inputStyle}
                   label="Username"
                   placeholder="Enter username"
                   variant="outlined"
@@ -92,7 +95,7 @@ const SignupPage = () => {
               </div>
 
               <div>
-                <TextField
+                <TextField style={inputStyle}
                   label="Email"
                   placeholder="Enter email id"
                   variant="outlined"
@@ -107,11 +110,11 @@ const SignupPage = () => {
               </div>
 
               <div className="signupPassword">
-                <FormControl variant="outlined">
+                <FormControl >
                   <InputLabel htmlFor="outlined-adornment-password">
                     Password
                   </InputLabel>
-                  <OutlinedInput
+                  <OutlinedInput style={inputStyle}
                     id="outlined-adornment-password"
                     type={showPassword.passwordOne ? "text" : "password"}
                     onChange={(e) => {
@@ -146,12 +149,11 @@ const SignupPage = () => {
               </div>
 
               <div className="confpass">
-                <FormControl variant="outlined">
+                <FormControl >
                   <InputLabel htmlFor="standard-adornment-password">
-                    {" "}
                     Confirm Password
                   </InputLabel>
-                  <Input
+                  <OutlinedInput style={inputStyle}
                     id="standard-adornment-password"
                     type={showPassword.passwordTwo ? "text" : "password"}
                     onChange={(e) => {
@@ -184,20 +186,16 @@ const SignupPage = () => {
               </div>
 
               <div>
-                <button id="login-btn" type="submit">
-                  Signup
-                </button>
+                <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Signup</Button>
               </div>
 
               <div>
-                <button
-                  id="create-btn"
+                
+                <Button color='primary' variant="contained" 
                   onClick={() => {
                     navigate("/login");
                   }}
-                >
-                  Already have an account{" "}
-                </button>
+                style={btnstyle}>Already have an account</Button>
               </div>
             </div>
           </form>
