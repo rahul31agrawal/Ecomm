@@ -4,7 +4,7 @@ import { useCart } from "../../context/cart-context";
 import { useWishlist } from "../../context/wishlist-context";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/authcontext";
-
+import Button from '@material-ui/core/Button';
 
 const Navbar = () => {
   const {cartState}=useCart();
@@ -41,17 +41,19 @@ const Navbar = () => {
         </div>
 
         <div className="top-links">
-        <Link className="btn" to="/ProductListing">
-        Products
-        </Link>
+        
+
+           <Link className="btnMui" to="/ProductListing"><Button variant="contained">Products</Button></Link>
 
           {auth.loginStatus ? (
-        <div className="btn" to="" onClick={() => logoutFunc()}>
-          Logout
-        </div>
+            
+            <div className="btnMui"><Button variant="contained" onClick={() => logoutFunc()}>Logout</Button></div>
+          
+          
+        
         ) : (
-        <Link className="btn" to="/login">
-          Login
+        <Link className="btnMui" to="/login">
+          <Button variant="contained">Login</Button>
         </Link>
         )}
 
